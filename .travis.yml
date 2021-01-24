@@ -2,4 +2,7 @@ matrix:
   include:
     - language: cpp
       script: ./test.sh
-    - language: node
+    - language: node_js
+      cache: yarn
+      node_js:
+        - node
