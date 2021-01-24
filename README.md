@@ -10,16 +10,16 @@
 #include "rex.hpp"
 
 // Inputs
-const int64_t payment = 10000;
-const int64_t deposit = 1000000;
-const int64_t supply = 10000000000;
+const uint64_t payment = 10000;
+const uint64_t deposit = 1000000;
+const uint64_t supply = 10000000000;
 const uint16_t ratio = 10000;
 
 // Calculation
-const int64_t issue_amount = rex::issue( payment, deposit, supply, ratio );
+const uint64_t issue_amount = rex::issue( payment, deposit, supply, ratio );
 // => 100000000
 
-const int64_t retire_amount = rex::retire( payment, deposit, supply );
+const uint64_t retire_amount = rex::retire( payment, deposit, supply );
 // => 10000
 ```
 
