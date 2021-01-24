@@ -41,12 +41,7 @@ namespace rex {
         // issue & redeem supply calculation
         // calculations based on add to REX pool
         // https://github.com/EOSIO/eosio.contracts/blob/f6578c45c83ec60826e6a1eeb9ee71de85abe976/contracts/eosio.system/src/rex.cpp#L1048-L1052
-        uint64_t S0 = deposit; // deposit
-        uint64_t S1 = S0 + payment; // payment
-        uint64_t R0 = supply; // supply
-        uint64_t R1 = (uint128_t(S1) * R0) / S0;
-
-        return R1 - R0;
+        return ((uint128_t(deposit + payment) * supply) / deposit) - supply;
     }
 
     /**
@@ -84,10 +79,6 @@ namespace rex {
         // issue & redeem supply calculation
         // calculations based on fill REX order
         // https://github.com/EOSIO/eosio.contracts/blob/f6578c45c83ec60826e6a1eeb9ee71de85abe976/contracts/eosio.system/src/rex.cpp#L775-L779
-        const uint64_t S0 = deposit;
-        const uint64_t R0 = supply;
-        const uint64_t p  = (uint128_t(payment) * S0) / R0;
-
-        return p;
+        return (uint128_t(payment) * deposit) / supply;
     }
 }

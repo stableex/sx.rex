@@ -36,12 +36,7 @@ export function issue( payment: bigint, deposit: bigint, supply: bigint, ratio =
     // issue & redeem supply calculation
     // calculations based on add to REX pool
     // https://github.com/EOSIO/eosio.contracts/blob/f6578c45c83ec60826e6a1eeb9ee71de85abe976/contracts/eosio.system/src/rex.cpp#L1048-L1052
-    const S0 = deposit; // deposit
-    const S1 = S0 + payment; // payment
-    const R0 = supply; // supply
-    const R1 = (S1 * R0) / S0;
-
-    return R1 - R0;
+    return (((deposit + payment) * supply) / deposit) - supply;
 }
 
 /**
@@ -79,9 +74,5 @@ export function retire( payment: bigint, deposit: bigint, supply: bigint )
     // issue & redeem supply calculation
     // calculations based on fill REX order
     // https://github.com/EOSIO/eosio.contracts/blob/f6578c45c83ec60826e6a1eeb9ee71de85abe976/contracts/eosio.system/src/rex.cpp#L775-L779
-    const S0 = deposit;
-    const R0 = supply;
-    const p  = (payment * S0) / R0;
-
-    return p;
+    return payment * deposit / supply;
 }

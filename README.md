@@ -1,6 +1,6 @@
 # **`REX`**
 
-[![Build Status](https://travis-ci.org/stableex/sx.rex.svg?branch=master)](https://travis-ci.org/stableex/sx.rex)
+[![Build Status](https://www.travis-ci.com/stableex/sx.rex.svg?branch=main)](https://travis-ci.org/stableex/sx.rex)
 
 > Peripheral EOSIO smart contracts for interacting with REX
 
