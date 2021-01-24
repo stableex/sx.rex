@@ -1,0 +1,5 @@
+matrix:
+  include:
+    - language: cpp
+      script: ./test.sh
+    - language: node
