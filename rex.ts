@@ -7,10 +7,10 @@
  *
  * ### params
  *
- * - `{int64_t} payment` - payment asset
- * - `{int64_t} deposit` - deposit assets
- * - `{int64_t} supply` - liquidity supply
- * - `{int64_t} [ratio=10000]` - default ratio used to initialize supply
+ * - `{bigint} payment` - payment asset
+ * - `{bigint} deposit` - deposit assets
+ * - `{bigint} supply` - liquidity supply
+ * - `{bigint} [ratio=10000]` - default ratio used to initialize supply
  *
  * ### example
  *
@@ -56,7 +56,6 @@ export function issue( payment: bigint, deposit: bigint, supply: bigint, ratio =
  * - `{bigint} payment` - payment asset
  * - `{bigint} deposit` - deposit assets
  * - `{bigint} supply` - liquidity supply
- * - `{bigint} [ratio=10000]` - default ratio used to initialize supply
  *
  * ### example
  *

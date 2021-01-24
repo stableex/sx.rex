@@ -8,13 +8,28 @@
 #include "rex.hpp"
 
 // Inputs
-const uint64_t amount_in = 100000;
-const uint64_t reserve_in = 45851931234;
-const uint64_t reserve_out = 125682033533;
-const uint64_t amplifier = 450;
-const uint64_t fee = 4;
+const int64_t payment = 10000;
+const int64_t deposit = 1000000;
+const int64_t supply = 10000000000;
+const uint16_t ratio = 10000;
 
 // Calculation
-const uint64_t out = rex::get_amount_out( amount_in, reserve_in, reserve_out, amplifier, fee );
-// => 100110
+const int64_t issue_amount = rex::issue( payment, deposit, supply, ratio );
+// => 100000000
+
+const int64_t retire_amount = rex::retire( payment, deposit, supply );
+// => 10000
+```
+
+## Testing
+
+**C++**
+
+```bash
+$ ./test.sh
+```
+**Typescript NodeJS**
+
+```bash
+$ npm test
 ```
