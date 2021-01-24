@@ -1,0 +1,13 @@
+{
+    "private": true,
+    "name": "sx.rex",
+    "scripts": {
+        "test": "jest --coverage rex.test.ts"
+    },
+    "devDependencies": {
+        "@types/jest": "*",
+        "jest": "*",
+        "ts-jest": "*",
+        "typescript": "*"
+    }
+}
